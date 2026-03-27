@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>案場作品 — 吃好睡好 Casa Selezione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:       #F5F0E8;
+  --stone:       #E0D8C8;
+  --warm-gray:   #B8AFA0;
+  --bronze:      #8B6F47;
+  --bronze-light:#A8895E;
+  --bronze-dark: #6A5235;
+  --charcoal:    #2A2520;
+  --ink:         #1A1512;
+  --white:       #FDFAF6;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Jost', sans-serif;
+  --nav-h: 68px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 52px;
+  background: rgba(26,21,18,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+}
+.nav-brand-zh {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--cream);
+  line-height: 1;
+}
+.nav-brand-it {
+  font-family: var(--serif);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .2em;
+  color: var(--warm-gray);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(184,175,160,.5);
+  text-decoration: none;
+  transition: color .2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 1px;
+  background: var(--bronze);
+  transform: scaleX(0);
+  transition: transform .25s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-links a:hover::after,
+.nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--cream); }
+
+.nav-cta {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--bronze);
+  text-decoration: none;
+  padding: 10px 22px;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--bronze-dark); }
+
+/* ─── GALLERY WRAPPER ─── */
+.gallery-wrap {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ─── CASE PANEL ─── */
+.case-panel { display: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── PHOTO GRID ─── */
+.grid-full {
+  width: 100%;
+  aspect-ratio: 16/8;
+  overflow: hidden;
+}
+.grid-full img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .8s ease;
+}
+.grid-full:hover img { transform: scale(1.02); }
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.grid-2col img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.grid-2col img:hover { transform: scale(1.02); }
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+}
+.grid-3col img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.grid-3col img:hover { transform: scale(1.03); }
+
+.grid-left-wide {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3px;
+}
+.grid-left-wide img {
+  width: 100%;
+  aspect-ratio: auto;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.grid-left-wide .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.grid-left-wide .right-col img {
+  flex: 1;
+  height: 0;
+  min-height: 0;
+}
+
+.grid-right-wide {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3px;
+}
+.grid-right-wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.grid-right-wide .left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.grid-right-wide .left-col img {
+  flex: 1;
+  height: 0;
+  min-height: 0;
+}
+
+.gap-row { height: 3px; background: var(--ink); }
+.gap-section { height: 24px; background: var(--ink); }
+
+/* ─── DOT NAV ─── */
+.dot-nav {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(26,21,18,.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(184,175,160,.3);
+  border: 1px solid rgba(184,175,160,.4);
+  cursor: pointer;
+  transition: background .3s, transform .3s, border-color .3s;
+  flex-shrink: 0;
+}
+.dot:hover {
+  background: rgba(184,175,160,.6);
+  transform: scale(1.2);
+}
+.dot.active {
+  background: var(--bronze);
+  border-color: var(--bronze);
+  transform: scale(1.15);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  padding: 64px 72px 40px;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(184,175,160,.12);
+}
+.footer-brand-zh {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--cream);
+  display: block;
+  margin-bottom: 4px;
+}
+.footer-brand-it {
+  font-family: var(--serif);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--warm-gray);
+  display: block;
+  margin-bottom: 20px;
+}
+.footer-brand-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(184,175,160,.55);
+  max-width: 240px;
+}
+.footer-col-title {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 13px;
+  color: rgba(184,175,160,.55);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-contact-item {
+  font-size: 13px;
+  color: rgba(184,175,160,.55);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.footer-contact-item a {
+  color: var(--bronze-light);
+  text-decoration: none;
+}
+.footer-contact-item a:hover { color: var(--cream); }
+.footer-bottom {
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy {
+  font-size: 11px;
+  color: rgba(184,175,160,.35);
+}
+.footer-social { display: flex; gap: 20px; }
+.footer-social a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(184,175,160,.4);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-social a:hover { color: var(--warm-gray); }
+
+/* ─── RADIO SWITCH ─── */
+input[type="radio"] { display: none; }
+
+#r0:checked ~ .gallery-wrap #case-0,
+#r1:checked ~ .gallery-wrap #case-1,
+#r2:checked ~ .gallery-wrap #case-2,
+#r3:checked ~ .gallery-wrap #case-3 { display: block; }
+
+#r0:checked ~ .gallery-wrap #case-1,
+#r0:checked ~ .gallery-wrap #case-2,
+#r0:checked ~ .gallery-wrap #case-3,
+#r1:checked ~ .gallery-wrap #case-0,
+#r1:checked ~ .gallery-wrap #case-2,
+#r1:checked ~ .gallery-wrap #case-3,
+#r2:checked ~ .gallery-wrap #case-0,
+#r2:checked ~ .gallery-wrap #case-1,
+#r2:checked ~ .gallery-wrap #case-3,
+#r3:checked ~ .gallery-wrap #case-0,
+#r3:checked ~ .gallery-wrap #case-1,
+#r3:checked ~ .gallery-wrap #case-2 { display: none; }
+
+#r0:checked ~ .dot-nav label[for="r0"],
+#r1:checked ~ .dot-nav label[for="r1"],
+#r2:checked ~ .dot-nav label[for="r2"],
+#r3:checked ~ .dot-nav label[for="r3"] {
+  background: var(--bronze);
+  border-color: var(--bronze);
+  transform: scale(1.15);
+}
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .grid-2col, .grid-3col { grid-template-columns: 1fr; }
+  .grid-left-wide, .grid-right-wide { grid-template-columns: 1fr; }
+  .grid-left-wide .right-col,
+  .grid-right-wide .left-col { flex-direction: row; }
+  .grid-left-wide .right-col img,
+  .grid-right-wide .left-col img { height: auto; min-height: unset; aspect-ratio: 4/3; }
+  footer { padding: 48px 24px 36px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .dot-nav { bottom: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-zh">吃好睡好</span>
+    <span class="nav-brand-it">Casa Selezione</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">關於我們</a></li>
+    <li><a href="gallery.html" class="active">案場作品</a></li>
+    <li><a href="services.html">服務與報價</a></li>
+    <li><a href="brands.html">品牌目錄</a></li>
+    <li><a href="contact.html">聯絡我們</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">開始詢價</a>
+</nav>
+
+<input type="radio" name="case" id="r0" checked>
+<input type="radio" name="case" id="r1">
+<input type="radio" name="case" id="r2">
+<input type="radio" name="case" id="r3">
+
+<div class="gallery-wrap">
+
+  <!-- ─── CASE 1: Tina & Anita ─── -->
+  <div class="case-panel active" id="case-0">
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930307.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930302.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930301.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930306.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-3col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930300.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930295.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930296.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930297.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930304.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930299.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930298.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- ─── CASE 2: Green Bay ─── -->
+  <div class="case-panel" id="case-1">
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930389.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930391.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930389.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930388.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-3col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930384.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930385.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930383.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/14930386.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15426442.png" alt="">
+    </div>
+  </div>
+
+  <!-- ─── CASE 3: Silent Stones ─── -->
+  <div class="case-panel" id="case-2">
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446204.jpeg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446206.jpeg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446205.jpeg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446234.jpeg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-3col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446203.jpeg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446202.jpeg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446235.jpeg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446236.jpeg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446233.jpeg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446251.jpeg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-3col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446249.jpeg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446253.jpeg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/15446247.jpeg" alt="">
+    </div>
+  </div>
+
+  <!-- ─── CASE 4: Golden Impression ─── -->
+  <div class="case-panel" id="case-3">
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120871.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120547.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120550.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120548.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120545.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120544.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120669.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-3col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120668.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120670.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120671.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-2col">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120724.jpg" alt="">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120726.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120818.jpg" alt="">
+    </div>
+    <div class="gap-row"></div>
+    <div class="grid-full">
+      <img src="https://cdn.store-assets.com/s/1374892/f/16120801.jpg" alt="">
+    </div>
+  </div>
+
+</div>
+
+<!-- DOT NAV -->
+<div class="dot-nav">
+  <label for="r0" class="dot"></label>
+  <label for="r1" class="dot"></label>
+  <label for="r2" class="dot"></label>
+  <label for="r3" class="dot"></label>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-brand-zh">吃好睡好</span>
+      <span class="footer-brand-it">Casa Selezione — Italian Furniture Sourcing</span>
+      <p class="footer-brand-desc">從台中室內設計出發，讓更多人用對的價格，買到真正好的歐洲家具。</p>
+    </div>
+    <div>
+      <span class="footer-col-title">導覽</span>
+      <ul class="footer-links">
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="gallery.html">案場作品</a></li>
+        <li><a href="services.html">服務與報價</a></li>
+        <li><a href="brands.html">品牌目錄</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">服務</span>
+      <ul class="footer-links">
+        <li><a href="services.html#inquiry">單品詢價</a></li>
+        <li><a href="services.html#pricing">透明報價</a></li>
+        <li><a href="services.html#process">詢價流程</a></li>
+        <li><a href="services.html#faq">常見問題</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">聯絡</span>
+      <p class="footer-contact-item"><a href="/cdn-cgi/l/email-protection#fc9499909093bc9f9d8f9d8f9990998695939299d29f9391"><span class="__cf_email__" data-cfemail="2f474a4343406f4c4e5c4e5c4a434a554640414a014c4042">[email&#160;protected]</span></a></p>
+      <p class="footer-contact-item">+886 9xx xxx xxx</p>
+      <p class="footer-contact-item" style="margin-top:8px;">台中市・Taiwan</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 吃好睡好 Casa Selezione. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/it_drinkwell_livewell/" target="_blank">Instagram</a>
+      <a href="https://www.threads.com/@it_drinkwell_livewell" target="_blank">Threads</a>
+    </div>
+  </div>
+</footer>
+

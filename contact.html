@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>聯絡我們 — 吃好睡好 Casa Selezione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --cream:#F5F0E8; --stone:#E0D8C8; --warm-gray:#B8AFA0;
+  --bronze:#8B6F47; --bronze-light:#A8895E; --bronze-dark:#6A5235;
+  --charcoal:#2A2520; --ink:#1A1512; --white:#FDFAF6;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',sans-serif;
+  --nav-h:68px;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--white); color:var(--charcoal); font-family:var(--sans); font-weight:300; overflow-x:hidden; }
+
+/* NAV */
+nav { position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 52px; background:rgba(253,250,246,.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(224,216,200,.5); }
+.nav-brand { display:flex; flex-direction:column; gap:2px; text-decoration:none; }
+.nav-brand-zh { font-size:15px; font-weight:500; letter-spacing:.12em; color:var(--ink); line-height:1; }
+.nav-brand-it { font-family:var(--serif); font-size:10px; letter-spacing:.2em; color:var(--warm-gray); line-height:1; text-transform:uppercase; }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a { font-size:11px; font-weight:400; letter-spacing:.14em; text-transform:uppercase; color:var(--warm-gray); text-decoration:none; transition:color .2s; position:relative; }
+.nav-links a::after { content:''; position:absolute; bottom:-3px; left:0; right:0; height:1px; background:var(--bronze); transform:scaleX(0); transition:transform .25s; }
+.nav-links a:hover { color:var(--charcoal); }
+.nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+.nav-links a.active { color:var(--charcoal); }
+.nav-cta { font-size:10px; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--white); background:var(--charcoal); text-decoration:none; padding:10px 22px; transition:background .2s; }
+.nav-cta:hover { background:var(--bronze); }
+
+/* HERO */
+.hero { padding-top:var(--nav-h); background:var(--cream); padding:calc(var(--nav-h) + 100px) 72px 100px; }
+.hero-eyebrow { display:flex; align-items:center; gap:16px; margin-bottom:36px; }
+.hero-eyebrow-line { width:32px; height:1px; background:var(--bronze); flex-shrink:0; }
+.hero-label { font-size:10px; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:var(--warm-gray); }
+.hero h1 { font-family:var(--serif); font-size:clamp(44px,5.5vw,72px); font-weight:300; line-height:1.08; color:var(--ink); margin-bottom:24px; }
+.hero h1 em { font-style:italic; color:var(--bronze); }
+.hero p { font-size:17px; line-height:1.9; color:#6B5E52; max-width:520px; }
+
+/* CONTACT GRID */
+.contact-wrap { display:grid; grid-template-columns:1fr 1fr; background:var(--white); }
+
+/* LEFT - 聯絡資訊 */
+.contact-info { padding:100px 72px; border-right:1px solid var(--stone); }
+.info-section { margin-bottom:60px; }
+.info-section:last-child { margin-bottom:0; }
+.info-label { font-size:10px; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:var(--warm-gray); display:block; margin-bottom:20px; }
+.info-rule { width:28px; height:1px; background:var(--bronze); margin-bottom:20px; }
+
+.info-item { display:flex; align-items:flex-start; gap:16px; margin-bottom:18px; }
+.info-item-icon { width:16px; height:16px; flex-shrink:0; margin-top:2px; opacity:.5; }
+.info-item-text { font-size:15px; line-height:1.7; color:var(--charcoal); }
+.info-item-text a { color:var(--charcoal); text-decoration:none; transition:color .2s; }
+.info-item-text a:hover { color:var(--bronze); }
+.info-item-text .sub { font-size:12px; color:var(--warm-gray); margin-top:3px; display:block; }
+
+.social-links { display:flex; flex-direction:column; gap:14px; }
+.social-link { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--charcoal); font-size:14px; transition:color .2s; }
+.social-link:hover { color:var(--bronze); }
+.social-link-handle { font-size:13px; color:var(--warm-gray); margin-left:auto; letter-spacing:.05em; }
+.social-link:hover .social-link-handle { color:var(--bronze-light); }
+
+.inquiry-form { margin-top:36px; display:flex; flex-direction:column; gap:24px; }
+.form-group { display:flex; flex-direction:column; gap:8px; }
+.form-label { font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--warm-gray); }
+.required { color:var(--bronze); }
+.form-input { font-family:var(--sans); font-size:14px; font-weight:300; color:var(--charcoal); background:var(--white); border:1px solid var(--stone); padding:12px 16px; outline:none; transition:border-color .2s; width:100%; }
+.form-input:focus { border-color:var(--bronze); }
+.form-input::placeholder { color:var(--warm-gray); }
+.form-textarea { resize:vertical; min-height:100px; line-height:1.7; }
+.form-success { padding:32px; background:var(--cream); border-left:2px solid var(--bronze); margin-top:24px; }
+.form-success p { font-family:var(--serif); font-size:18px; font-style:italic; color:var(--bronze-dark); }
+.form-hint { font-size:12px; color:var(--warm-gray); margin-top:4px; }
+
+/* RIGHT - 詢價說明 */
+.contact-inquiry { padding:100px 72px; background:var(--cream); display:flex; flex-direction:column; justify-content:space-between; }
+.inquiry-top h2 { font-family:var(--serif); font-size:clamp(28px,3vw,42px); font-weight:300; line-height:1.2; color:var(--ink); margin-bottom:28px; }
+.inquiry-top h2 em { font-style:italic; color:var(--bronze); }
+.inquiry-top p { font-size:15px; line-height:1.9; color:#6B5E52; margin-bottom:20px; }
+
+.inquiry-steps { margin:40px 0; }
+.inquiry-step { display:flex; align-items:flex-start; gap:16px; margin-bottom:24px; }
+.inquiry-step-num { width:28px; height:28px; border-radius:50%; border:1px solid var(--bronze); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:500; color:var(--bronze); flex-shrink:0; }
+.inquiry-step-text { font-size:14px; line-height:1.7; color:#6B5E52; padding-top:4px; }
+.inquiry-step-text strong { font-weight:500; color:var(--charcoal); }
+
+.inquiry-cta { margin-top:auto; padding-top:48px; border-top:1px solid var(--stone); }
+.btn-primary { display:inline-block; font-size:10px; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--charcoal); background:var(--charcoal); color:var(--white); text-decoration:none; padding:14px 32px; transition:background .2s; }
+.btn-primary:hover { background:var(--bronze); }
+.btn-note { font-size:12px; color:var(--warm-gray); margin-top:14px; display:block; }
+
+.hours-note { font-size:13px; line-height:1.8; color:#7A6E64; padding:20px 24px; background:var(--cream); border-left:2px solid var(--bronze); margin-top:8px; }
+.map-section { background:var(--ink); padding:0; position:relative; overflow:hidden; height:320px; }
+.map-inner { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+.map-embed { width:100%; height:100%; border:0; filter:grayscale(20%) contrast(1.1); }
+
+/* PHOTO SECTION */
+.photo-section { position:relative; height:420px; overflow:hidden; }
+.photo-section img { width:100%; height:100%; object-fit:cover; display:block; }
+.photo-section-overlay { position:absolute; inset:0; background:rgba(26,21,18,.2); }
+
+/* MAP */
+.map-section { background:var(--ink); padding:72px; }
+.map-address-card { display:flex; align-items:center; justify-content:space-between; max-width:600px; }
+.map-address-left { display:flex; flex-direction:column; gap:12px; }
+.map-label { font-size:10px; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:rgba(184,175,160,.5); }
+.map-address-text { font-family:var(--serif); font-size:32px; font-weight:300; color:var(--cream); line-height:1.3; }
+.map-address-sub { font-size:13px; color:rgba(184,175,160,.5); }
+.map-link { font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--bronze-light); text-decoration:none; border-bottom:1px solid rgba(168,137,94,.3); padding-bottom:2px; transition:border-color .2s; width:fit-content; margin-top:8px; }
+.map-link:hover { border-color:var(--bronze-light); }
+.map-address-right { opacity:.4; }
+
+/* FOOTER */
+footer { background:var(--ink); padding:64px 72px 40px; }
+.footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; padding-bottom:56px; border-bottom:1px solid rgba(184,175,160,.12); }
+.footer-brand-zh { font-size:18px; font-weight:500; letter-spacing:.12em; color:var(--cream); display:block; margin-bottom:4px; }
+.footer-brand-it { font-family:var(--serif); font-size:12px; font-style:italic; color:var(--warm-gray); display:block; margin-bottom:20px; }
+.footer-brand-desc { font-size:13px; line-height:1.8; color:rgba(184,175,160,.55); max-width:240px; }
+.footer-col-title { font-size:10px; font-weight:500; letter-spacing:.25em; text-transform:uppercase; color:var(--warm-gray); margin-bottom:20px; display:block; }
+.footer-links { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.footer-links a { font-size:13px; color:rgba(184,175,160,.55); text-decoration:none; transition:color .2s; }
+.footer-links a:hover { color:var(--cream); }
+.footer-contact-item { font-size:13px; color:rgba(184,175,160,.55); margin-bottom:10px; line-height:1.6; }
+.footer-contact-item a { color:var(--bronze-light); text-decoration:none; }
+.footer-bottom { padding-top:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-copy { font-size:11px; color:rgba(184,175,160,.35); }
+.footer-social { display:flex; gap:20px; }
+.footer-social a { font-size:11px; font-weight:400; letter-spacing:.12em; text-transform:uppercase; color:rgba(184,175,160,.4); text-decoration:none; transition:color .2s; }
+.footer-social a:hover { color:var(--warm-gray); }
+
+@media (max-width:960px) {
+  nav { padding:0 24px; } .nav-links { display:none; }
+  .hero { padding:calc(var(--nav-h) + 60px) 28px 60px; }
+  .contact-wrap { grid-template-columns:1fr; }
+  .contact-info { padding:60px 28px; border-right:none; border-bottom:1px solid var(--stone); }
+  .contact-inquiry { padding:60px 28px; }
+  footer { padding:48px 28px 36px; } .footer-top { grid-template-columns:1fr 1fr; gap:32px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-zh">吃好睡好</span>
+    <span class="nav-brand-it">Casa Selezione</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">關於我們</a></li>
+    <li><a href="gallery.html">案場作品</a></li>
+    <li><a href="services.html">服務與報價</a></li>
+    <li><a href="brands.html">品牌目錄</a></li>
+    <li><a href="contact.html" class="active">聯絡我們</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">開始詢價</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-line"></span>
+    <span class="hero-label">聯絡我們</span>
+  </div>
+  <h1>有問題，<br>或是想<em>開始詢價</em>了？</h1>
+  <p>把品牌名稱、型號或圖片傳給我們就好。我們會在 3–5 個工作天內回覆完整報價。</p>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap">
+
+  <!-- 左：聯絡資訊 -->
+  <div class="contact-info">
+
+    <div class="info-section">
+      <span class="info-label">電話 / 傳真</span>
+      <div class="info-rule"></div>
+      <div class="info-item">
+        <svg class="info-item-icon" viewBox="0 0 16 16" fill="none">
+          <path d="M2 2.5C2 2.2 2.2 2 2.5 2h2.3c.3 0 .5.2.5.4l.7 3c0 .3-.1.5-.3.6L4.4 6.8C5.4 8.9 7.1 10.6 9.2 11.6l.8-1.3c.1-.2.3-.3.6-.3l3 .7c.2 0 .4.2.4.5V13.5c0 .3-.2.5-.5.5C6.1 14 2 9.9 2 2.5z" stroke="#2A2520" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="info-item-text">
+          <a href="tel:0423786088">04-2378-6088</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <span class="info-label">Email</span>
+      <div class="info-rule"></div>
+      <div class="info-item">
+        <svg class="info-item-icon" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#2A2520" stroke-width="1.2"/>
+          <path d="M1 4l7 5 7-5" stroke="#2A2520" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="info-item-text">
+          <a href="/cdn-cgi/l/email-protection#fc9499909093bc9f9d8f9d8f9990998695939299d29f9391"><span class="__cf_email__" data-cfemail="58303d343437183b392b392b3d343d223137363d763b3735">[email&#160;protected]</span></a>
+          <span class="sub">Email 尚未正式啟用，以電話聯絡為主</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <span class="info-label">社群媒體</span>
+      <div class="info-rule"></div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/it_drinkwell_livewell/" target="_blank" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="#2A2520" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="5" stroke="#2A2520" stroke-width="1.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="#2A2520"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.threads.com/@it_drinkwell_livewell" target="_blank" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.205 17.11 97.014 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 9.999 15.818 12.787 26.128l16.18-4.32c-3.476-12.797-9.015-23.848-16.57-32.927C147.042 10.61 125.307 1.317 97.077 1.1h-.113C68.739 1.317 47.19 10.632 32.395 27.683 19.183 42.79 12.342 64.008 12.1 96c.241 31.993 7.082 53.21 20.295 68.317C47.19 181.368 68.739 190.683 96.964 190.9h.113c24.925-.171 42.538-6.697 57.024-21.168 18.977-18.96 18.444-42.68 12.19-57.233-4.573-10.657-13.379-19.386-24.754-24.511zM97.45 129.24c-10.427.588-21.285-4.098-21.82-14.135-.397-7.442 5.296-15.746 22.461-16.735 1.966-.113 3.895-.169 5.79-.169 6.235 0 12.068.606 17.37 1.765-1.978 24.702-13.754 28.713-23.801 29.274z" fill="#2A2520"/>
+          </svg>
+          Threads
+        </a>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <span class="info-label">地址</span>
+      <div class="info-rule"></div>
+      <div class="info-item">
+        <svg class="info-item-icon" viewBox="0 0 16 16" fill="none">
+          <path d="M8 1.5A4.5 4.5 0 0 1 12.5 6c0 3-4.5 8.5-4.5 8.5S3.5 9 3.5 6A4.5 4.5 0 0 1 8 1.5z" stroke="#2A2520" stroke-width="1.2"/>
+          <circle cx="8" cy="6" r="1.5" stroke="#2A2520" stroke-width="1.2"/>
+        </svg>
+        <div class="info-item-text">
+          台中市西區五權西四街37號
+        </div>
+      </div>
+      <div class="hours-note">
+        目前以線上詢價為主，如需現場拜訪請提前來電確認。
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 右：聯絡表單 -->
+  <div class="contact-inquiry">
+    <div class="inquiry-top">
+      <h2>留下資訊<br><em>我們來聯繫你</em></h2>
+      <p>填寫姓名與聯絡方式，我們會主動與你聯繫，了解你的需求並提供報價。</p>
+    </div>
+
+    <form class="inquiry-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">姓名 <span class="required">*</span></label>
+        <input type="text" class="form-input" placeholder="請輸入你的姓名" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">聯絡方式 <span class="required">*</span></label>
+        <input type="text" class="form-input" placeholder="電話、LINE ID 或 Email" required>
+        <span class="form-hint">我們會以你提供的方式主動聯繫</span>
+      </div>
+      <div class="inquiry-cta">
+        <button type="submit" class="btn-primary">送出</button>
+        <span class="btn-note">服務時間：週一至週五 9:00–18:00</span>
+      </div>
+    </form>
+
+    <div id="form-success" style="display:none;" class="form-success">
+      <p>✓ 已收到你的資訊，我們會盡快與你聯繫！</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- 地圖 -->
+<div class="photo-section">
+  <img src="https://cdn.store-assets.com/s/1374892/f/16120669.jpg" alt="Golden Impression 案場"
+    onerror="this.src='https://www.emotiondesign.tw/cdn/shop/files/golden-impression-01.jpg?v=1234567890'">
+  <div class="photo-section-overlay"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-brand-zh">吃好睡好</span>
+      <span class="footer-brand-it">Casa Selezione — Italian Furniture Sourcing</span>
+      <p class="footer-brand-desc">從台中室內設計出發，讓更多人用對的價格，買到真正好的歐洲家具。</p>
+    </div>
+    <div>
+      <span class="footer-col-title">導覽</span>
+      <ul class="footer-links">
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="gallery.html">案場作品</a></li>
+        <li><a href="services.html">服務與報價</a></li>
+        <li><a href="brands.html">品牌目錄</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">服務</span>
+      <ul class="footer-links">
+        <li><a href="services.html#process">詢價流程</a></li>
+        <li><a href="services.html#pricing">費用結構</a></li>
+        <li><a href="services.html#faq">常見問題</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">聯絡</span>
+      <p class="footer-contact-item"><a href="tel:0423786088">04-2378-6088</a></p>
+      <p class="footer-contact-item">台中市西區五權西四街37號</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 吃好睡好 Casa Selezione. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/it_drinkwell_livewell/" target="_blank">Instagram</a>
+      <a href="https://www.threads.com/@it_drinkwell_livewell" target="_blank">Threads</a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-stati
