@@ -99,6 +99,24 @@ footer { background:var(--ink); padding:64px 72px 40px; }
   .cta { grid-template-columns:1fr; padding:72px 28px; gap:36px; } .cta-btns { align-items:flex-start; }
   footer { padding:48px 28px 36px; } .footer-top { grid-template-columns:1fr 1fr; gap:32px; }
 }
+
+/* FAQ */
+.faq-section { padding:100px 72px; background:var(--cream); }
+.faq-wrap { max-width:800px; margin:0 auto; }
+.faq-header { margin-bottom:56px; }
+.faq-list { display:flex; flex-direction:column; }
+.faq-item { border-bottom:1px solid var(--stone); }
+.faq-q { width:100%; display:flex; justify-content:space-between; align-items:center; padding:24px 0; background:none; border:none; cursor:pointer; text-align:left; font-family:var(--sans); font-size:16px; font-weight:400; color:var(--charcoal); gap:24px; }
+.faq-q:hover { color:var(--bronze); }
+.faq-icon { width:20px; height:20px; position:relative; flex-shrink:0; }
+.faq-icon::before { content:''; position:absolute; width:100%; height:1px; top:50%; left:0; transform:translateY(-50%); background:currentColor; }
+.faq-icon::after  { content:''; position:absolute; width:1px; height:100%; left:50%; top:0; transform:translateX(-50%); background:currentColor; transition:transform .25s, opacity .25s; }
+.faq-item.open .faq-icon::after { transform:translateX(-50%) rotate(90deg); opacity:0; }
+.faq-a { display:none; padding:0 0 24px; }
+.faq-item.open .faq-a { display:block; }
+.faq-a p { font-size:15px; line-height:1.9; color:#6B5E52; }
+@media(max-width:960px) { .faq-section { padding:60px 28px; } }
+
 </style>
 </head>
 <body>
@@ -312,11 +330,108 @@ footer { background:var(--ink); padding:64px 72px 40px; }
   </div>
 </section>
 
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-wrap">
+    <div class="faq-header">
+      <div class="section-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-label">常見問題</span>
+      </div>
+      <h2 class="section-title">你可能想知道的事</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>我需要自己聯繫義大利廠商嗎？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>不需要。所有與歐洲廠商的聯繫、確認、下單流程，都由我們全程處理。你只需要提供想要的品牌和品項，其餘交給我們。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>從下單到收到貨大概要多久？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>依品牌和品項不同，通常約 3–6 個月。部分品牌有現貨，時間較短；客製化訂單則可能需要更長時間。我們會在報價時提供預估交期。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>服務費怎麼計算？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>我們收取商品定價的固定比例作為服務費，涵蓋聯繫廠商、訂單確認、進口報關、國內運送等完整流程。報價時會清楚列出每一項費用，沒有隱藏收費。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>可以代購哪些品牌？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>我們目前合作的品牌超過 70 個，涵蓋義大利、丹麥、德國、法國等多國品牌。完整清單請參考品牌目錄頁面。沒有看到你想要的品牌？歡迎直接詢問，我們會盡力協助。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>可以只買一件家具嗎？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>可以。我們沒有最低訂購數量限制，單件商品也可以代購。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>商品有保固嗎？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>有。所有商品均為歐洲原廠正品，享有原廠保固。保固條款依各品牌規定而異，我們會在交付時提供相關文件。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>可以客製化顏色或材質嗎？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>可以，依品牌提供的選項而定。許多歐洲家具品牌提供豐富的布料、皮革、木色選擇。我們會協助你確認可用的規格並提供建議。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>如何開始詢價？</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>直接加入我們的 LINE，告訴我們你想要的品牌或品項（品名、型號、圖片或連結都可以），我們會在 3–5 個工作天內回覆完整報價。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div>
       <span class="footer-brand-zh">吃好睡好</span>
-      <span class="footer-brand-it">Casa Selezione — Italian Furniture Sourcing</span>
+      <span class="footer-brand-it">Casa Selezione — European Furniture Sourcing</span>
       <p class="footer-brand-desc">從台中室內設計出發，讓更多人用對的價格，買到真正好的歐洲家具。</p>
     </div>
     <div>
@@ -339,6 +454,7 @@ footer { background:var(--ink); padding:64px 72px 40px; }
     </div>
     <div>
       <span class="footer-col-title">聯絡</span>
+      <p class="footer-contact-item"><a href="tel:0423786088">04-2378-6088</a></p>
       <p class="footer-contact-item"><a href="/cdn-cgi/l/email-protection#49212c252526092a283a283a2c252c332026272c672a2624"><span class="__cf_email__" data-cfemail="84ece1e8e8ebc4e7e5f7e5f7e1e8e1feedebeae1aae7ebe9">[email&#160;protected]</span></a></p>
       <p class="footer-contact-item">+886 9xx xxx xxx</p>
       <p class="footer-contact-item" style="margin-top:8px;">台中市・Taiwan</p>
