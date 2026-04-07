@@ -73,7 +73,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:
 
 /* FOOTER */
 footer{background:var(--ink);padding:64px 72px 40px}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:56px;border-bottom:1px solid rgba(184,175,160,.12)}
+.footer-top > div { flex: 0 0 auto; }
+.footer-top > div:last-child { }
+.footer-top{display:flex;justify-content:space-between;padding-bottom:56px;border-bottom:1px solid rgba(184,175,160,.12)}
 .footer-brand-zh{font-size:18px;font-weight:500;letter-spacing:.12em;color:var(--cream);display:block;margin-bottom:4px}
 .footer-brand-it{font-family:var(--serif);font-size:12px;font-style:italic;color:var(--warm-gray);display:block;margin-bottom:20px}
 .footer-brand-desc{font-size:13px;line-height:1.8;color:rgba(184,175,160,.55);max-width:240px}
@@ -88,6 +90,16 @@ footer{background:var(--ink);padding:64px 72px 40px}
 .footer-social{display:flex;gap:20px}
 .footer-social a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(184,175,160,.4);text-decoration:none;transition:color .2s}
 .footer-social a:hover{color:var(--warm-gray)}
+.footer-back-top {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(184,175,160,.4);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-back-top:hover { color: var(--warm-gray); }
 
 @media(max-width:960px){
   nav{padding:0 24px}.nav-links{display:none}
@@ -96,7 +108,7 @@ footer{background:var(--ink);padding:64px 72px 40px}
   .cc:nth-child(2){border-right:none}.cc:nth-child(3){border-right:none}.cc:nth-child(4){border-top:1px solid var(--stone)}
   .line-section{grid-template-columns:1fr}
   .line-left{padding:48px 28px}.line-right{padding:48px 28px}
-  footer{padding:48px 28px 36px}.footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  footer{padding:48px 28px 36px}.footer-top{flex-wrap:wrap;gap:32px;justify-content:flex-start} .footer-top>div{flex:0 0 auto}
 }
 </style>
 </head>
@@ -189,32 +201,51 @@ footer{background:var(--ink);padding:64px 72px 40px}
       <p class="footer-brand-desc">從台中室內設計出發，讓更多人用對的價格，買到真正好的歐洲家具。</p>
     </div>
     <div>
-      <span class="footer-col-title">導覽</span>
+            <span class="footer-col-title">導覽</span>
       <ul class="footer-links">
         <li><a href="about.html">關於我們</a></li>
         <li><a href="gallery.html">案場作品</a></li>
         <li><a href="services.html">服務與報價</a></li>
-        <li><a href="brands.html">品牌目錄</a></li>
-        <li><a href="contact.html">聯絡我們</a></li>
-      </ul>
-    </div>
-    <div>
-      <span class="footer-col-title">服務</span>
-      <ul class="footer-links">
-        <li><a href="services.html#process">詢價流程</a></li>
-        <li><a href="services.html#pricing">費用結構</a></li>
         <li><a href="services.html#faq">常見問題</a></li>
+        <li><a href="brands.html">品牌目錄</a></li>
       </ul>
     </div>
+
+        <div>
+      <span class="footer-col-title">追蹤我們</span>
+      <ul class="footer-links">
+        <li>
+          <a href="https://www.instagram.com/it_drinkwell_livewell/" target="_blank" style="display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.threads.com/@it_drinkwell_livewell" target="_blank" style="display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 192 192" fill="none"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.205 17.11 97.014 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 9.999 15.818 12.787 26.128l16.18-4.32c-3.476-12.797-9.015-23.848-16.57-32.927C147.042 10.61 125.307 1.317 97.077 1.1h-.113C68.739 1.317 47.19 10.632 32.395 27.683 19.183 42.79 12.342 64.008 12.1 96c.241 31.993 7.082 53.21 20.295 68.317C47.19 181.368 68.739 190.683 96.964 190.9h.113c24.925-.171 42.538-6.697 57.024-21.168 18.977-18.96 18.444-42.68 12.19-57.233-4.573-10.657-13.379-19.386-24.754-24.511zM97.45 129.24c-10.427.588-21.285-4.098-21.82-14.135-.397-7.442 5.296-15.746 22.461-16.735 1.966-.113 3.895-.169 5.79-.169 6.235 0 12.068.606 17.37 1.765-1.978 24.702-13.754 28.713-23.801 29.274z" fill="currentColor"/></svg>
+            Threads
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="document.getElementById('line-modal').style.display='flex';return false;" style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 5.83 2 10.5c0 4.23 3.75 7.78 8.81 8.44.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.05.27-.21 1.05.92.57 1.13-.48 6.13-3.61 8.36-6.18A7.56 7.56 0 0 0 22 10.5C22 5.83 17.52 2 12 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            LINE
+          </a>
+        </li>
+      </ul>
+    </div>
+    
     <div>
       <span class="footer-col-title">聯絡</span>
       <p class="footer-contact-item"><a href="tel:0423786088">04-2378-6088</a></p>
       <p class="footer-contact-item" style="margin-top:4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,175,160,.55);">郵件</p>
-      <span class="footer-contact-item" style="font-size:13px;color:rgba(184,175,160,.55);line-height:1.6;display:block;">drinkwelllivewell2025&#x40;gmail.com</span>
-      <p class="footer-contact-item">台中市西區五權西四街37號</p>
+      <p class="footer-contact-item"><a href="mailto:drinkwelllivewell2025@gmail.com">drinkwelllivewell2025@gmail.com</a></p>
+      <p class="footer-contact-item"><a href="https://maps.google.com/?q=台中市西區五權西四街37號" target="_blank">台中市西區五權西四街37號</a></p>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 吃好睡好 Casa Selezione. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="https://www.instagram.com/it_drinkwell_livewell/" target="
+    <a href="#" class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ 回到頂部</a>
+  </div>
+</body>
+</html>
