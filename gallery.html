@@ -260,53 +260,17 @@ nav {
 
 
 /* ─── PRE-FOOTER CONTACT ─── */
-.pre-footer-contact {
-  background: var(--charcoal);
-  padding: 72px 72px;
-  border-top: 1px solid rgba(184,175,160,.08);
-}
-.pfc-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 64px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+.pre-footer-contact { background: var(--charcoal); padding: 72px 72px; border-top: 1px solid rgba(184,175,160,.08); }
+.pfc-inner { display: flex; justify-content: space-between; gap: 64px; max-width: 1200px; margin: 0 auto; }
 .pfc-col { flex: 0 0 auto; }
-.pfc-title {
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-  margin-bottom: 24px;
-}
+.pfc-title { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: .25em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 24px; }
 .pfc-items { display: flex; flex-direction: column; gap: 16px; }
 .pfc-item { display: flex; flex-direction: column; gap: 2px; }
-.pfc-label {
-  font-size: 10px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(184,175,160,.45);
-}
-.pfc-item a, .pfc-item span:not(.pfc-label) {
-  font-size: 14px;
-  color: rgba(184,175,160,.7);
-  text-decoration: none;
-  transition: color .2s;
-}
+.pfc-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(184,175,160,.45); }
+.pfc-item a, .pfc-item span:not(.pfc-label) { font-size: 14px; color: rgba(184,175,160,.7); text-decoration: none; transition: color .2s; }
 .pfc-item a:hover { color: var(--cream); }
 .pfc-social { display: flex; flex-direction: column; gap: 16px; }
-.pfc-social-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: rgba(184,175,160,.7);
-  text-decoration: none;
-  transition: color .2s;
-}
+.pfc-social-link { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(184,175,160,.7); text-decoration: none; transition: color .2s; }
 .pfc-social-link:hover { color: var(--cream); }
 
 /* ─── FOOTER ─── */
@@ -452,8 +416,7 @@ input[type="radio"] { display: none; }
   .grid-left-wide .right-col img,
   .grid-right-wide .left-col img { height: auto; min-height: unset; aspect-ratio: 4/3; }
   footer { padding: 48px 24px 36px; }
-  .footer-top { flex-wrap: wrap; gap: 32px; justify-content: flex-start; }
-  .footer-top > div { flex: 0 0 auto; }
+  .footer-top {  gap: 40px; }
   .dot-nav { bottom: 24px; }
 }
 
@@ -472,8 +435,6 @@ input[type="radio"] { display: none; }
 @media(max-width:960px) {
   .contact-block { padding:48px 28px; }
   .contact-block-inner { flex-direction:column; gap:40px; }
-  .pre-footer-contact { padding: 56px 28px; }
-  .pfc-inner { flex-direction: column; gap: 40px; }
 }
 
 </style>
@@ -655,6 +616,9 @@ input[type="radio"] { display: none; }
   <label for="r3" class="dot"></label>
 </div>
 
+<!-- FOOTER -->
+
+
 
 <!-- PRE-FOOTER CONTACT -->
 <section class="pre-footer-contact">
@@ -696,9 +660,6 @@ input[type="radio"] { display: none; }
   </div>
 </section>
 
-<!-- FOOTER -->
-
-
 <footer>
   <div class="footer-top">
     <div>
@@ -716,7 +677,6 @@ input[type="radio"] { display: none; }
         <li><a href="brands.html">品牌目錄</a></li>
       </ul>
     </div>
-
             <div>
       <span class="footer-col-title">追蹤我們</span>
       <ul class="footer-links">
@@ -751,6 +711,7 @@ input[type="radio"] { display: none; }
     </div>
   </div>
   <div c
+</footer>
 <!-- LINE QR Modal -->
 <div id="line-modal" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
   <div onclick="event.stopPropagation()" style="background:#fff;padding:36px 32px;border-radius:12px;text-align:center;max-width:260px;cursor:default;box-shadow:0 20px 60px rgba(0,0,0,.3);">
