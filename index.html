@@ -1101,7 +1101,6 @@ footer {
     <h2>有想找的品牌或<br>品項了嗎？<em>傳給我們。</em></h2>
     <p>只要提供品牌、型號或圖片，我們就能開始幫你確認並報價。不複雜，不需要預約。</p>
     <div class="cta-btns">
-      <a href="contact.html" class="btn-cta-primary">立即詢價</a>
       <a href="brands.html" class="btn-cta-ghost">瀏覽品牌目錄</a>
     </div>
   </div>
@@ -1165,6 +1164,15 @@ footer {
     <a href="#" class="footer-back-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ 回到頂部</a>
   </div>
 </footer>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
 <!-- LINE QR Modal -->
 <div id="line-modal" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
   <div onclick="event.stopPropagation()" style="background:#fff;padding:36px 32px;border-radius:12px;text-align:center;max-width:260px;cursor:default;box-shadow:0 20px 60px rgba(0,0,0,.3);">
