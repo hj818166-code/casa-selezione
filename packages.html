@@ -487,5 +487,36 @@ footer { background:var(--charcoal); padding:72px 72px 36px; border-top:1px soli
   </div>
 </div>
 
+<script>
+var budgetLabels = ['30','60','100'];
+var currentBudget = 0;
+
+function switchBudget(idx) {
+  currentBudget = idx;
+  document.querySelectorAll('.budget-tab').forEach(function(t,i){
+    t.classList.toggle('active', i===idx);
+  });
+  document.querySelectorAll('.config-panel').forEach(function(p,i){
+    p.classList.toggle('active', i===idx);
+  });
+  updateSummary();
+}
+
+function toggleSelect(card) {
+  var row = card.closest('.cat-row');
+  row.querySelectorAll('.opt-card').forEach(function(c){ c.classList.remove('selected'); });
+  card.classList.add('selected');
+  updateSummary();
+}
+
+function updateSummary() {
+  var panel = document.querySelector('.config-panel.active');
+  var selected = panel.querySelectorAll('.opt-card.selected').length;
+  var total = panel.querySelectorAll('.cat-row').length;
+  document.getElementById('summary-price').innerHTML = budgetLabels[currentBudget] + '<span>萬方案</span>';
+  document.getElementById('summary-count').textContent = '已選 ' + selected + ' / ' + total + ' 項';
+}
+</script>
+
 </body>
 </html>
