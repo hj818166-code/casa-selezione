@@ -149,287 +149,174 @@ footer { background:var(--charcoal); padding:72px 72px 36px; border-top:1px soli
     </div>
     <h1>選一個預算，<br><em>我們幫你配好。</em></h1>
     <p>每個方案包含多種歐洲品牌選擇，自由搭配你喜歡的款式。想額外加購其他品項，另外計算不受限。</p>
+    <p style="margin-top:20px;font-size:13px;color:var(--bronze-light);">方案即將上線，歡迎先透過 LINE 諮詢。</p>
   </div>
 </section>
 
-<!-- BUDGET TABS -->
-<div style="background:var(--charcoal);">
-  <div class="budget-tabs">
-    <div class="budget-tab active" onclick="switchBudget(0)">
-      <div class="tab-price">30<span>萬</span></div>
-      <div class="tab-label">入門首選</div>
-    </div>
-    <div class="budget-tab" onclick="switchBudget(1)">
-      <div class="tab-price">60<span>萬</span></div>
-      <div class="tab-label">熱門推薦</div>
-    </div>
-    <div class="budget-tab" onclick="switchBudget(2)">
-      <div class="tab-price">100<span>萬</span></div>
-      <div class="tab-label">全屋配置</div>
-    </div>
-  </div>
+<!-- COMING SOON -->
+<div style="background:var(--charcoal);padding:120px 72px;text-align:center;">
+  <p style="font-family:var(--serif);font-size:clamp(48px, 8vw, 80px);font-weight:300;color:var(--cream);letter-spacing:.02em;">Coming Soon</p>
 </div>
 
-<!-- CONFIGURATOR -->
+<!--
+CONFIGURATOR (HIDDEN - Coming Soon)
+下面的內容暫時隱藏，等套餐方案確定後取消註解即可顯示
+-->
+<!--
 <section class="configurator">
   <div class="config-inner">
 
-    <!-- 30萬方案 -->
     <div class="config-panel active" id="panel-0">
 
+      <!-- 沙發 Sofa ×1 (三選一) -->
       <div class="cat-row">
         <div class="cat-header">
-          <span class="cat-name">沙發</span>
-          <span class="cat-count">3 款可選</span>
+          <span class="cat-name">沙發 Sofa ×1</span>
+          <span class="cat-count">Made in Italy · 3 款可選</span>
         </div>
         <div class="options-grid">
           <div class="opt-card selected" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">Samoa Loft Special</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand A</div>
-              <div class="opt-name">三人座沙發 Model X</div>
-              <div class="opt-spec">W220 × D90 × H80 cm</div>
+              <div class="opt-brand">Samoa</div>
+              <div class="opt-name">Loft Special / LOFS103</div>
+              <div class="opt-spec">L210 × P105 × H80/105 cm</div>
+              <div class="opt-spec">布料 CAT. A, B, C, D</div>
             </div>
           </div>
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">Samoa Sheer Special</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand B</div>
-              <div class="opt-name">L型沙發 Model Y</div>
-              <div class="opt-spec">W260 × D180 × H75 cm</div>
+              <div class="opt-brand">Samoa</div>
+              <div class="opt-name">Sheer Special / SHES104</div>
+              <div class="opt-spec">L207 × P92 × H87 cm</div>
+              <div class="opt-spec">布料 CAT. A, B, C, D</div>
             </div>
           </div>
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">Samoa Mono</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand C</div>
-              <div class="opt-name">雙人座沙發 Model Z</div>
-              <div class="opt-spec">W180 × D85 × H78 cm</div>
+              <div class="opt-brand">Samoa</div>
+              <div class="opt-name">Mono / MO26104 (BR26)</div>
+              <div class="opt-spec">L220 × P110 × H88 cm</div>
+              <div class="opt-spec">布料 CAT. A, B, C, D</div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 單人椅 Armchair or Pouf ×1 (二選一) -->
       <div class="cat-row">
         <div class="cat-header">
-          <span class="cat-name">茶几</span>
-          <span class="cat-count">3 款可選</span>
+          <span class="cat-name">單人椅 Armchair or Pouf ×1</span>
+          <span class="cat-count">Made in Italy · 2 款可選</span>
         </div>
         <div class="options-grid">
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">Samoa Ebe</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand D</div>
-              <div class="opt-name">圓形茶几</div>
-              <div class="opt-spec">Ø80 × H35 cm</div>
+              <div class="opt-brand">Samoa</div>
+              <div class="opt-name">Ebe Armchair</div>
+              <div class="opt-spec">布料 CAT. A, B, C, D</div>
             </div>
           </div>
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">Samoa Dori</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand E</div>
-              <div class="opt-name">方形茶几</div>
-              <div class="opt-spec">W100 × D60 × H38 cm</div>
-            </div>
-          </div>
-          <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
-            <div class="opt-info">
-              <div class="opt-brand">Brand F</div>
-              <div class="opt-name">大理石茶几</div>
-              <div class="opt-spec">Ø90 × H33 cm</div>
+              <div class="opt-brand">Samoa</div>
+              <div class="opt-name">Dori Armchair</div>
+              <div class="opt-spec">布料 CAT. A, B, C, D</div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 茶几 Coffee Table ×1 -->
       <div class="cat-row">
         <div class="cat-header">
-          <span class="cat-name">餐桌</span>
-          <span class="cat-count">2 款可選</span>
+          <span class="cat-name">茶几 Coffee Table ×1</span>
+          <span class="cat-count">PolsPotten</span>
         </div>
         <div class="options-grid">
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">PolsPotten Coffee Table</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand G</div>
-              <div class="opt-name">實木餐桌 4人</div>
-              <div class="opt-spec">W160 × D90 × H75 cm</div>
-            </div>
-          </div>
-          <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
-            <div class="opt-info">
-              <div class="opt-brand">Brand H</div>
-              <div class="opt-name">延伸餐桌 4-6人</div>
-              <div class="opt-spec">W140-200 × D90 × H75 cm</div>
+              <div class="opt-brand">PolsPotten</div>
+              <div class="opt-name">Coffee Table</div>
+              <div class="opt-spec">多色可選</div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 邊凳 ZigZag Stool ×2 -->
       <div class="cat-row">
         <div class="cat-header">
-          <span class="cat-name">餐椅 ×4</span>
-          <span class="cat-count">3 款可選</span>
+          <span class="cat-name">邊凳 Stool ×2</span>
+          <span class="cat-count">PolsPotten</span>
         </div>
         <div class="options-grid">
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">ZigZag</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand I</div>
-              <div class="opt-name">皮革餐椅</div>
-              <div class="opt-spec">W48 × D52 × H82 cm</div>
+              <div class="opt-brand">PolsPotten</div>
+              <div class="opt-name">ZigZag Stool</div>
+              <div class="opt-spec">多色可選</div>
             </div>
           </div>
           <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
+            <div class="opt-img"><span class="opt-img-placeholder">TipTap</span></div>
             <div class="opt-info">
-              <div class="opt-brand">Brand J</div>
-              <div class="opt-name">布面餐椅</div>
-              <div class="opt-spec">W46 × D54 × H80 cm</div>
-            </div>
-          </div>
-          <div class="opt-card" onclick="toggleSelect(this)">
-            <div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div>
-            <div class="opt-info">
-              <div class="opt-brand">Brand K</div>
-              <div class="opt-name">木質餐椅</div>
-              <div class="opt-spec">W44 × D50 × H78 cm</div>
+              <div class="opt-brand">PolsPotten</div>
+              <div class="opt-name">TipTap Stool</div>
+              <div class="opt-spec">多色可選</div>
             </div>
           </div>
         </div>
       </div>
 
-    </div>
+      <!-- 地毯 Carpet ×1 -->
+      <div class="cat-row">
+        <div class="cat-header">
+          <span class="cat-name">地毯 Carpet ×1</span>
+          <span class="cat-count">PolsPotten</span>
+        </div>
+        <div class="options-grid">
+          <div class="opt-card" onclick="toggleSelect(this)">
+            <div class="opt-img"><span class="opt-img-placeholder">Outline Rug 圓形</span></div>
+            <div class="opt-info">
+              <div class="opt-brand">PolsPotten</div>
+              <div class="opt-name">Outline Rug — Round</div>
+              <div class="opt-spec">W200 cm</div>
+            </div>
+          </div>
+          <div class="opt-card" onclick="toggleSelect(this)">
+            <div class="opt-img"><span class="opt-img-placeholder">Outline Rug 長方形</span></div>
+            <div class="opt-info">
+              <div class="opt-brand">PolsPotten</div>
+              <div class="opt-name">Outline Rug — Rectangular</div>
+              <div class="opt-spec">L170 × W240 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- 60萬方案 -->
-    <div class="config-panel" id="panel-1">
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">沙發</span><span class="cat-count">4 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand A</div><div class="opt-name">三人座沙發</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand B</div><div class="opt-name">L型沙發</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand C</div><div class="opt-name">組合式沙發</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand D</div><div class="opt-name">模組沙發</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">茶几</span><span class="cat-count">3 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand E</div><div class="opt-name">圓形茶几</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand F</div><div class="opt-name">方形茶几</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand G</div><div class="opt-name">大理石茶几</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">餐桌</span><span class="cat-count">3 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand H</div><div class="opt-name">實木餐桌</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand I</div><div class="opt-name">陶瓷面餐桌</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand J</div><div class="opt-name">延伸餐桌</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">餐椅 ×4</span><span class="cat-count">4 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand K</div><div class="opt-name">皮革餐椅</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand L</div><div class="opt-name">布面餐椅</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand M</div><div class="opt-name">木質餐椅</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand N</div><div class="opt-name">金屬餐椅</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">邊櫃</span><span class="cat-count">2 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand O</div><div class="opt-name">矮邊櫃</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand P</div><div class="opt-name">高邊櫃</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">床架 + 床墊</span><span class="cat-count">3 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand Q</div><div class="opt-name">皮革床架組</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand R</div><div class="opt-name">布面床架組</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand S</div><div class="opt-name">木質床架組</div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 100萬方案 -->
-    <div class="config-panel" id="panel-2">
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">沙發</span><span class="cat-count">5 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand A</div><div class="opt-name">三人座沙發</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand B</div><div class="opt-name">L型沙發</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand C</div><div class="opt-name">組合式沙發</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand D</div><div class="opt-name">模組沙發</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">茶几</span><span class="cat-count">4 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand E</div><div class="opt-name">圓形茶几</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand F</div><div class="opt-name">方形茶几</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand G</div><div class="opt-name">大理石茶几</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand H</div><div class="opt-name">玻璃茶几</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">餐桌</span><span class="cat-count">4 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand I</div><div class="opt-name">實木餐桌</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand J</div><div class="opt-name">陶瓷面餐桌</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand K</div><div class="opt-name">延伸餐桌</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand L</div><div class="opt-name">大理石餐桌</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">餐椅 ×6</span><span class="cat-count">4 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand M</div><div class="opt-name">皮革餐椅</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand N</div><div class="opt-name">布面餐椅</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand O</div><div class="opt-name">木質餐椅</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand P</div><div class="opt-name">金屬餐椅</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">電視櫃 + 邊櫃</span><span class="cat-count">3 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand Q</div><div class="opt-name">懸浮電視櫃組</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand R</div><div class="opt-name">落地電視櫃組</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand S</div><div class="opt-name">模組收納櫃組</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">床架 + 床墊</span><span class="cat-count">3 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand T</div><div class="opt-name">皮革床架組</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand U</div><div class="opt-name">布面床架組</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand V</div><div class="opt-name">木質床架組</div></div></div>
-        </div>
-      </div>
-      <div class="cat-row">
-        <div class="cat-header"><span class="cat-name">床頭櫃 ×2</span><span class="cat-count">2 款可選</span></div>
-        <div class="options-grid">
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand W</div><div class="opt-name">圓形床頭櫃</div></div></div>
-          <div class="opt-card" onclick="toggleSelect(this)"><div class="opt-img"><span class="opt-img-placeholder">產品照片</span></div><div class="opt-info"><div class="opt-brand">Brand X</div><div class="opt-name">方形床頭櫃</div></div></div>
-        </div>
-      </div>
     </div>
 
   </div>
 </section>
+-->
 
-<!-- SUMMARY BAR -->
+<!-- SUMMARY BAR (hidden for coming soon) -->
+<!--
 <div class="summary-bar">
   <div class="summary-left">
-    <div class="summary-budget" id="summary-price">30<span>萬方案</span></div>
-    <div class="summary-selected" id="summary-count">已選 0 項</div>
+    <div class="summary-budget" id="summary-price">300,000 <span>NT 客廳方案</span></div>
+    <div class="summary-selected" id="summary-count">已選 0 / 5 項</div>
   </div>
   <a href="#" class="summary-btn" onclick="document.getElementById('line-modal').style.display='flex';return false;">LINE 諮詢搭配</a>
 </div>
+-->
 
 <!-- FOOTER -->
 <footer>
@@ -488,20 +375,6 @@ footer { background:var(--charcoal); padding:72px 72px 36px; border-top:1px soli
 </div>
 
 <script>
-var budgetLabels = ['30','60','100'];
-var currentBudget = 0;
-
-function switchBudget(idx) {
-  currentBudget = idx;
-  document.querySelectorAll('.budget-tab').forEach(function(t,i){
-    t.classList.toggle('active', i===idx);
-  });
-  document.querySelectorAll('.config-panel').forEach(function(p,i){
-    p.classList.toggle('active', i===idx);
-  });
-  updateSummary();
-}
-
 function toggleSelect(card) {
   var row = card.closest('.cat-row');
   row.querySelectorAll('.opt-card').forEach(function(c){ c.classList.remove('selected'); });
@@ -513,7 +386,6 @@ function updateSummary() {
   var panel = document.querySelector('.config-panel.active');
   var selected = panel.querySelectorAll('.opt-card.selected').length;
   var total = panel.querySelectorAll('.cat-row').length;
-  document.getElementById('summary-price').innerHTML = budgetLabels[currentBudget] + '<span>萬方案</span>';
   document.getElementById('summary-count').textContent = '已選 ' + selected + ' / ' + total + ' 項';
 }
 </script>
