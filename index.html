@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="referrer" content="no-referrer">
 <title>吃好睡好 — 歐洲家具選購 | Casa Selezione</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +37,6 @@ body {
   cursor: default;
 }
 
-/* ─── 共用 ─── */
 .label {
   font-family: var(--sans);
   font-size: 10px;
@@ -46,7 +46,6 @@ body {
   color: var(--warm-gray);
 }
 
-/* ─── NAV ─── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -111,7 +110,6 @@ nav {
 .nav-links a:hover { color: var(--charcoal); }
 .nav-links a:hover::after { transform: scaleX(1); }
 
-/* ─── HERO ─── */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -169,13 +167,6 @@ nav {
   margin-bottom: 52px;
   opacity: 0;
   animation: fadeUp .8s .48s ease forwards;
-}
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  opacity: 0;
-  animation: fadeUp .8s .6s ease forwards;
 }
 .hero-footnote {
   position: absolute;
@@ -239,7 +230,6 @@ nav {
   animation: fadeIn 1s 1.4s ease forwards;
 }
 
-/* ─── ORIGIN ─── */
 .origin {
   padding: 120px 72px;
   display: grid;
@@ -254,29 +244,6 @@ nav {
   aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
-}
-.origin-img-tag {
-  position: absolute;
-  bottom: -1px; right: -1px;
-  background: var(--bronze);
-  padding: 18px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.origin-img-tag-top {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1;
-}
-.origin-img-tag-bot {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(253,250,246,.7);
 }
 .origin-content h2 {
   font-family: var(--serif);
@@ -317,7 +284,6 @@ nav {
   color: var(--bronze-dark);
 }
 
-/* ─── GALLERY STRIP ─── */
 .gallery-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -333,7 +299,6 @@ nav {
 }
 .gallery-strip img:hover { opacity: .85; }
 
-/* ─── SERVICES ─── */
 .services {
   padding: 120px 72px;
   background: var(--ink);
@@ -395,7 +360,6 @@ nav {
   color: rgba(184,175,160,.6);
 }
 
-/* ─── PRICING (Coming Soon) ─── */
 .pricing {
   padding: 120px 72px;
   background: var(--cream);
@@ -460,7 +424,6 @@ nav {
   letter-spacing: .04em;
 }
 
-/* ─── CTA ─── */
 .cta {
   padding: 0;
   position: relative;
@@ -533,7 +496,6 @@ nav {
 }
 .btn-cta-ghost:hover { border-color: var(--cream); }
 
-/* ─── FOOTER ─── */
 footer {
   background: var(--ink);
   padding: 64px 72px 40px;
@@ -617,20 +579,6 @@ footer {
   color: rgba(184,175,160,.35);
   letter-spacing: .05em;
 }
-.footer-social {
-  display: flex;
-  gap: 20px;
-}
-.footer-social a {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(184,175,160,.4);
-  text-decoration: none;
-  transition: color .2s;
-}
-.footer-social a:hover { color: var(--warm-gray); }
 .footer-back-top {
   font-size: 11px;
   font-weight: 400;
@@ -642,7 +590,6 @@ footer {
 }
 .footer-back-top:hover { color: var(--warm-gray); }
 
-/* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: none; }
@@ -669,7 +616,6 @@ footer {
 .reveal-d3 { transition-delay: .3s; }
 .reveal-d4 { transition-delay: .4s; }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 960px) {
   nav { padding: 0 24px; }
   .nav-links { display: none; }
@@ -692,7 +638,6 @@ footer {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand">
     <span class="nav-brand-zh">吃好睡好</span>
@@ -708,7 +653,6 @@ footer {
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">
@@ -733,11 +677,6 @@ footer {
         <span class="hero-footnote-val">歐洲</span>
         <span class="hero-footnote-lbl">原廠直購</span>
       </div>
-      <div class="hero-footnote-sep"></div>
-      <div class="hero-footnote-item">
-        <span class="hero-footnote-val">台中</span>
-        <span class="hero-footnote-lbl">在地服務</span>
-      </div>
     </div>
   </div>
   <div class="hero-right">
@@ -747,14 +686,9 @@ footer {
   </div>
 </section>
 
-<!-- ORIGIN -->
 <section class="origin">
   <div class="origin-img-wrap reveal">
     <img class="origin-img" src="https://cdn.store-assets.com/s/1374892/f/15446204.jpeg" alt="Silent Stones 案場 — 不錯喲設計" />
-    <div class="origin-img-tag">
-      <span class="origin-img-tag-top">01</span>
-      <span class="origin-img-tag-bot">Our Story</span>
-    </div>
   </div>
   <div class="origin-content reveal reveal-d1">
     <span class="label">我們的起點</span>
@@ -769,7 +703,6 @@ footer {
   </div>
 </section>
 
-<!-- GALLERY STRIP -->
 <section class="gallery-strip">
   <img src="https://cdn.store-assets.com/s/1374892/f/15446204.jpeg" alt="Silent Stones" />
   <img src="https://cdn.store-assets.com/s/1374892/f/15446206.jpeg" alt="Silent Stones" />
@@ -777,7 +710,6 @@ footer {
   <img src="https://cdn.store-assets.com/s/1374892/f/15446251.jpeg" alt="Silent Stones" />
 </section>
 
-<!-- SERVICES -->
 <section class="services">
   <div class="services-top">
     <h2 class="reveal">我們提供什麼<br><em>兩種方式，都能買到好家具</em></h2>
@@ -812,7 +744,6 @@ footer {
   </div>
 </section>
 
-<!-- PRICING (Coming Soon) -->
 <section class="pricing">
   <div class="pricing-coming reveal">
     <span class="label">預算方案</span>
@@ -825,7 +756,6 @@ footer {
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="cta-bg">
     <img src="https://cdn.store-assets.com/s/1374892/f/16120724.jpeg" alt="Golden Impression 案場" />
@@ -841,7 +771,6 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
@@ -883,7 +812,6 @@ footer {
 </footer>
 
 <script>
-  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -892,7 +820,6 @@ footer {
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
